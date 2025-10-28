@@ -1,0 +1,61 @@
+import random
+import time
+
+diemcamxuc = [] #tạo list điêm cảm xúc
+diem = 0 # 
+diemcamxuc.append(diem)
+
+
+def viewpoint():
+    while True:
+        print(sum(diemcamxuc))
+        print("Ok")
+        print("Reset")
+        Okorreset=input("Exit or Reset:  ")
+        if Okorreset=="exit":
+          break
+        if Okorreset=="reset":
+          diemcamxuc.clear()
+          return viewpoint()
+      
+
+
+def Vui():
+    #bắt đầu "vui":
+    khen=("Thật tuyệt khi thấy bạn đang lan tỏa nguồn năng lượng tích cực","Bạn đang thể hiện một tinh thần rất đẹp đó","Sự tích cực của bạn không chỉ là cảm xúc, mà là giá trị thật sự khiến người khác được truyền cảm hứng")
+    print(random.choice(khen))
+    time.sleep(3)
+def hoatdong_vui():
+    #print("Tâm trạng của bạn phù hợp với các hoạt động:")
+    time.sleep(1)
+    hdvui=( "Đi bộ 1 vòng quanh nhà",
+                "Tự thưởng cho bản thân 1 món đồ uống iu thích",
+                "Chơi môn thể thao bạn thích",
+                "Nghe 1 bài nhạc thật hay",
+                "Viết ra 3 điều bạn muốn làm cho ngày mai")
+    random_hdvui=random.choice(hdvui)
+    return random_hdvui
+
+
+def in_diem_vuive():
+     return "Điểm thưởng vui vẻ: +2"
+
+
+def Chapnhan_or_not():
+            global diem
+            diem=2
+            diemcamxuc.append(diem)
+            quotevui=("Khi bạn vui, cả thế giới như rộng và sáng hơn", "Giữ chặt những khoảnh khắc hạnh phúc, nó là nhiên liệu cho những ngày sau","Niềm vui nhỏ cũng đáng được ăn mừng")
+            return(random.choice(quotevui))
+
+
+def da_xong_nhiemvu():
+    return "Wow bạn làm rất tốt !"
+
+def chua_xong_nhiemvu():
+    return "cố lên nhé !"
+
+#không đồng ý
+def khong_dongy():
+        #print( "loading...")
+        return hoatdong_vui()
